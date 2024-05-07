@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    width: 100%;
+    background-color: rgb(107, 167, 132);
+    justify-content: space-between;
+    
+}
+
+header .logo_hotel {
+    background-image: url(../images/logo_hotel.png);
+    background-repeat: no-repeat;
+    width: 140px;
+    height: auto;
+    margin: 6px;
+    filter: drop-shadow(-6px 6px 1px rgb(100, 98, 98));
+
+}
+
+
+.nav_hotel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style:none;
+}
+
+.nav_hotel li {
+    margin: 7px;
+    align-items: center;
+}
