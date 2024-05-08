@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/images/favicon.ico">
+
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <ul class="nav_hotel">
+                <a href="/"><img src="/images/logo_hotel.png" alt=""></a>
+                <li><a href="./habitaciones.html">Habitaciones</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./quienes-somos.html">¿Quiénes somos?</a></li>
+                <li><a href="#">Contáctanos</a></li>
+                <li><a href="./donde-encontrarnos.html">¿Dónde encontrarnos?</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h2>CONTACTO</h2>
+
+        <!-- Formulario de Contacto -->
+        <form action="" method="get" id="form-contacto">
+
+            <!-- Nombre -->
+            <div class="form-control">
+                <label for="">Nombre: </label>
+                <input type="text" name="first-name" id="first-name" required>
+            </div>
+
+            <div class="error" id="error-firstname"></div>
+
+            <br>
+
+            <!-- Apellido -->
+            <div class="form-control">
+                <label for="">Apellido: </label>
+                <input type="text" name="last-name" id="last-name" required>
+            </div>
+
+            <div class="error" id="error-lastname"></div>
+
+            <br>
+
+            <!-- Email -->
+            <div class="form-control">
+                <label for="">Mail</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="error" id="error-email"></div>
+
+            <br>
+
+            <!-- Teléfono -->
+            <div>
+                <label for="">Nº de Teléfono: </label>
+                <input type="number" name="telefono" id="telefono" maxlength="15" required>
+            </div>
+
+            <div class="error" id="error-telefono"></div>
+
+            <br>
+
+            <!-- Medio de Contacto -->
+            <div><label for="">Elige el medio para contactarte</label>
+                <select name="medio-Contacto" id="medio-Contacto" required>
+                    <option value="">Mail</option>
+                    <option value="">Mensaje</option>
+                    <option value="">Whatsapp</option>
+                    <option value="">Llamada</option>
+                </select>
+            </div>
+
+            <br>
+
+            <!-- Comentario -->
+            <div>
+                <label for="">Déjanos tu consulta:</label>
+
+                <br>
+
+                <textarea name="" id=""></textarea>
+            </div>
+
+            <br>
+
+            <!-- Términos y Condiciones -->
+            <div>
+                <label for="">Acepto los términos y condiciones</label>
+                <input type="checkbox" required>
+            </div>
+
+            <br>
+
+            <!-- Botón de Enviar -->
+            <button type="submit">Enviar</button>
+
+            <div>
+            </div>
+        </form>
+    </main>
+    <footer></footer>
+
+</body>
+
+</html>
