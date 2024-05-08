@@ -1,6 +1,9 @@
 
-body{
-    overflow-x: hidden
+
+
+
+main {
+    background-color: aliceblue;
 }
 
 
@@ -39,88 +42,4 @@ header .logo_hotel {
     margin: 6px;
     align-items: center;
     justify-content: flex-start;
-}
-
-.info_adicional{
-    text-align: start;
-    width: 100%;
-    margin: 50px 0 50px 50px;
-
-}
-
-.container{
-    background-color: white;
-    font-family: "DM Sans", sans-serif;
-}
-
-.hotel{
-    justify-content: start;
-    align-items: start;
-    font-size: 36px;
-    color: #104C97;
-}
-
-.res_calif{
-    display: flex;
-    align-items: center;
-    
-}
-.clasif_span{
-    border-left: thick solid #adb5bd;
-    border-width:2px;
-    height:45px;
-    position: relative;
-    margin: 10px;
-    
-}
-
-.btn_consultas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn_consultas button{
-    margin: 5px;
-    font-family: "DM Sans", sans-serif;
-    padding: 10px 16px;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-}
-
-.btn_consultas button:hover{
-    background-color: #104C97;
-    color: #dee2e6;
-    transition: all 0.5s ease;
-}
-
-.img_hotel_home{
-    display: flex;
-    width: 100%;
-    margin-top: 50px;
-    
-}
-
-.img_hotel_home div{
-    width: 700px;
-    overflow: hidden;
-    margin: 5px 5px 20px;
-}
-.cheecking_home{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #dee2e6;
-    color: rgb(82, 89, 97);
-    font-size: 16px;
-}
-
-.contactos_home{
-    display: inline-flex;
-}
-.contac_col{
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px 20px 20px;
 }
