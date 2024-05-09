@@ -15,7 +15,6 @@ header {
     font-style:normal;
     font-size: 20px;
     border-bottom: 8px solid rgb(221, 220, 220);
-    
 }
 
 header .logo_hotel {
@@ -27,6 +26,13 @@ header .logo_hotel {
     filter: drop-shadow(-5px 6px 1px rgb(100, 98, 98));
 }
 
+
+#naveHotel {
+    margin-left: 0px;
+    position: fixed;
+    left: 120px;
+    top: 30px;
+}
 
 .nav_hotel {
     display: flex;
