@@ -124,3 +124,30 @@ header .logo_hotel {
     flex-direction: column;
     padding: 20px 20px 20px 20px;
 }
+
+.info_footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    margin: 50px 0 50px 0;
+}
+
+.info_footer h2{
+    font-size: 25px;
+    color: #104C97;
+}
+
+.contacto_footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.media_footer{
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+}
