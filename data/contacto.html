@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <script src="./script.js" defer></script>
-    
-    <title>HOTEL-PYFS</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="icon" href="../images/favicon.ico">
+
+    <title>Contacto</title>
 </head>
+
 <body>
+
+     <!--Cabezera Con Logo +  Navegacion + atajos-->
+
     <header>
-        <!--Cabezera Con Logo +  Navegacion + atajos-->
-        <div class="logo_hotel"></div>
+        <a href="../index.html" alt" "><div class="logo_hotel"></div></a>
         <div id="naveHotel">
             <nav>
                 <ul class="nav_hotel">
-                    <li><a href="./data/habitaciones.html">Habitaciones</a></li>
-                    <li><a href="./data/servicios.html">Servicios</a></li>
-                    <li><a href="./data/quienes-somos.html">¿Quiénes somos?</a></li>
-                    <li><a href="./data/contacto.html">Contáctanos</a></li>
-                    <li><a href="./data/donde-encontrarnos.html">¿Dónde encontrarnos?</a></li>
+                    <li><a href="./habitaciones.html">Habitaciones</a></li>
+                    <li><a href="./servicios.html">Servicios</a></li>
+                    <li><a href="./quienes-somos.html">¿Quiénes somos?</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="./donde-encontrarnos.html">¿Dónde encontrarnos?</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,98 +39,90 @@
             </nav>
         </div>
     </header>
-    <!--Cuerpo Lo que quieran-->
-    <main class="container">
-        <div class="info_adicional">
-            <h1 class="hotel">Hotel PYFS</h1>
-            <div class="res_calif">
-                <div class="">
-                    <img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-26025-5.svg">
-                    <p>Calificación: 4,5 de 5,0</p>
-                </div>
-                <span class="clasif_span"></span>
-                <div> 
-                    <p>Basado en 4679 opiniones de huéspedes</p>
-                </div>
+    <main>
+        <h2>CONTACTO</h2>
+
+        <!-- Formulario de Contacto -->
+        <form action="" method="get" id="form-contacto">
+
+            <!-- Nombre -->
+            <div class="form-control">
+                <label for="">Nombre: </label>
+                <input type="text" name="first-name" id="first-name" required>
             </div>
-        </div>
-        <div class="btn_consultas">
-            <button>Calendario</button>
-            <button>1 habitacion, 1 huesped</button>
-            <button>Tarifas especiales</button>
-        </div>
-        <div class="carrousell">
-            <div class="carrousel-items">
-                <div class="carrousel-item">
-                <img src="./images/single-1.jpg" alt="habitación simple uno">
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/single-2.jpg" alt="habitación simple dos">
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/single-3.jpg" alt="habitación simple tres">
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/doble-1.jpg" alt="habitación doble uno">
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/doble-2.jpg" alt="habitación doble dos"> 
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/doble-3.jpg" alt="habitación doble tres">
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/dobleD1.jpg" alt="habitación doble otra">
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/dobleD-2.jpg" alt="habitación doble otra dos">
-                </div>
-                <div class="carrousel-item">
-                <img src="./images/dobleD-3.jpg" alt="habitación doble otra tres">  
-                </div>   
+
+            <div class="error" id="error-firstname"></div>
+
+            <br>
+
+            <!-- Apellido -->
+            <div class="form-control">
+                <label for="">Apellido: </label>
+                <input type="text" name="last-name" id="last-name" required>
             </div>
-        </div>
-        <div class="cheecking_home">
-            <div class="contactos_home">
-                <div class="contac_col">
-                    <span>Llámenos</span>
-                    <span>+54 11 4891-0000</span>
-                </div>
-                <div class="contac_col">
-                    <span>Envíenos un correo electrónico</span>
-                    <span>reservations.buenosaires@hilton.com</span>
-                </div>
+
+            <div class="error" id="error-lastname"></div>
+
+            <br>
+
+            <!-- Email -->
+            <div class="form-control">
+                <label for="">Mail</label>
+                <input type="email" name="email" id="email" required>
             </div>
-            <div class="contac_col">
-                    <span>Dirección</span>
-                    <span>Av Macacha Guemes 351 Buenos Aires, C1106BKG Argentina</span>
+
+            <div class="error" id="error-email"></div>
+
+            <br>
+
+            <!-- Teléfono -->
+            <div>
+                <label for="">Nº de Teléfono: </label>
+                <input type="number" name="telefono" id="telefono" maxlength="15" required>
             </div>
-            <div class="contac_col">
-                <span>Horario de llegada</span>
-                <span> Check-in15 h→Check-out12 h</span>
+
+            <div class="error" id="error-telefono"></div>
+
+            <br>
+
+            <!-- Medio de Contacto -->
+            <div><label for="">Elige el medio para contactarte</label>
+                <select name="medio-Contacto" id="medio-Contacto" required>
+                    <option value="">Mail</option>
+                    <option value="">Mensaje</option>
+                    <option value="">Whatsapp</option>
+                    <option value="">Llamada</option>
+                </select>
             </div>
-        </div>
-        <div class="contain_hab_map">
-            <div class="mapa_habitacion">
-                <img class="img_plano" id="img_plano" src="https://i.pinimg.com/736x/6f/20/d5/6f20d5de7265ff34def4871059188aaa.jpg">
-                <div class="circulo circulo-1" id="cir-1">
-                    <span>1</span>
-                </div>
-                <div class="circulo circulo-2" id="cir-2">
-                    <span>2</span>
-                </div>
-                <div class="circulo circulo-3" id="cir-3">
-                    <span>3</span>
-                </div>
+
+            <br>
+
+            <!-- Comentario -->
+            <div>
+                <label for="">Déjanos tu consulta:</label>
+
+                <br>
+
+                <textarea name="" id=""></textarea>
             </div>
-            <div class="img_habitacion">
-                <img class="img_pinte" id="img_pinte" src="./images/doble-1.jpg">
-                <img class="img_pinte" id="img_btr" src="./images/single-3.jpg">
-                <img class="img_pinte" id="img_dobl" src="./images/doble-2.jpg">
+
+            <br>
+
+            <!-- Términos y Condiciones -->
+            <div>
+                <label for="">Acepto los términos y condiciones</label>
+                <input type="checkbox" required>
             </div>
-        </div>
+
+            <br>
+
+            <!-- Botón de Enviar -->
+            <button type="submit">Enviar</button>
+
+            <div>
+            </div>
+        </form>
     </main>
-    <!--Acá el Pié con los datos que queramos-->
     <footer>
         <div class="info_footer">
             <h2>¿En qué lo podemos ayudar?</h2>
@@ -170,5 +160,7 @@
             <span>©2024 PYFS</span>
         </div>
     </footer>
+
 </body>
+
 </html>
