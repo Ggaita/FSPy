@@ -1,46 +1,73 @@
 
+
+/* BODY-ROOT */ 
+
+
 body{
     overflow-x: hidden;
 }
 
 
 
+
+/* -----  HEADER-ROOT ----- */ 
+
+
 header {
     display: flex;
     width: 100%;
     height: 110px;
-    background-color: rgb(194, 224, 207);
+    background-color: hsla(146, 42%, 30%, 0.212);
     justify-content: space-between;
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-style:normal;
-    font-size: 20px;
     border-bottom: 8px solid rgb(221, 220, 220);
 }
 
-header .logo_hotel {
+header a {
+    color: black;
+    margin: 1vw;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style:normal;
+}
+
+header a:hover {
+    color: hsl(0, 90%, 54%);
+    font-size: 3.2vh;
+    transition: all 0.5s ease;
+    font-weight:bold;
+    filter: drop-shadow(-5px 6px 1px hsla(0, 7%, 3%, 0.151));
+}
+
+nav {
+    display: flex;
+}
+
+
+.logo_hotel {
     background-image: url(../images/logo_hotel.png);
     background-repeat: no-repeat;
-    width: 110px;
-    height: 117px;
+    min-width: 115px;
+    min-height: 114px;
     margin: 10px;
-    padding-left: 5px;
+    padding: 5px;
     filter: drop-shadow(-5px 6px 1px rgb(100, 98, 98));
-}
-
-
-#naveHotel {
-    margin-left: 0px;
     position: relative;
-    left: 2px;
-    top: 30px;
+    display:block;
+    flex-wrap: nowrap;
 }
+
+
+
 
 .nav_hotel {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     list-style:none;
+    position: relative;
+}
+
+.nav_hotel a {
+    font-size: 1.5rem;
 }
 
 .nav_hotel li {
@@ -49,6 +76,24 @@ header .logo_hotel {
     justify-content: flex-start;
 }
 
+.nav_atajos {
+    font-size: 1.1rem;
+    margin-right: 1vw;
+    color: hsla(118, 36%, 82%, 0.39);
+}
+
+
+
+#naveHotel {
+    margin-left: 0px;
+    position:relative;
+    margin: 2vh;
+    padding-left: -20vw;
+    
+}
+
+/* -----  MAIN-ROOT ----- */ 
+
 .info_adicional{
     text-align: start;
     width: 100%;
@@ -56,35 +101,14 @@ header .logo_hotel {
 
 }
 
-.carrousel-items {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding: 50px 0px;
-}
 
-.carrousel-item {
-    min-width: 800px;
-    max-width: 1500px;
-
-}
-
-.carrousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carrousel-item:hover {
-    transform: scale(1.2);
-    transition-duration:2s;
-}
-
+/* -----  BARRAS-INDEX ----- */ 
 
 .container{
     background-color: white;
     font-family: "DM Sans", sans-serif;
 }
+
 
 .hotel{
     justify-content: start;
@@ -128,6 +152,34 @@ header .logo_hotel {
     transition: all 0.5s ease;
 }
 
+/* -----  CARROUSELL-INDEX ----- */ 
+
+.carrousel-items {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 50px 0px;
+}
+
+.carrousel-item {
+    min-width: 800px;
+    max-width: 1500px;
+
+}
+
+.carrousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrousel-item:hover {
+    transform: scale(1.2);
+    transition-duration:2s;
+}
+
+
+/* -----  CHECKIN-INDEX ----- */ 
 
 .cheecking_home{
     display: flex;
@@ -138,6 +190,7 @@ header .logo_hotel {
     font-size: 16px;
 }
 
+
 .contactos_home{
     display: inline-flex;
 }
@@ -147,55 +200,10 @@ header .logo_hotel {
     padding: 20px 20px 20px 20px;
 }
 
-.service {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-top: 5%;
-}
-
-.resumen_grilla {
-    margin-top: 7%;
-    margin-left: 5%;
-    align-content: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px;
-}
 
 
-#cuadros {
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 350px;
-    height: 250px;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2%;
-}
+/* -----  FOOTER-ROOT ----- */ 
 
-
-#contenedor {
-    width: 23%;
-    text-align: center;
-    display: inline-block;
-    justify-items:center ;
-    margin: 2%;
-}
-
-.service img {
-    width: 500px;
-    height: auto;
-    
-}
-
-#ico {
-    width: 50px;
-    margin: 2%;
-}
 
 .info_footer{
     display: flex;
@@ -223,3 +231,63 @@ header .logo_hotel {
     flex-direction: row;
     padding: 0%;
 }
+
+
+
+/* -----  SERVICIOS-QUIENES SOMOS ----- */ 
+
+
+.service {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+.service img {
+    width: 500px;
+    height: auto;
+    
+}
+
+#contenedor {
+    width: 23%;
+    text-align: center;
+    display: inline-block;
+    justify-items:center ;
+    margin: 2%;
+}
+
+/* -----  RESUMEN DE SERVICIOS-QUIENES SOMOS  ----- */ 
+
+
+.resumen_grilla {
+    margin-top: 7%;
+    margin-left: 5%;
+    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+
+#cuadros {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 350px;
+    height: 250px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+}
+
+
+#ico {
+    width: 50px;
+    margin: 2%;
+}
+
