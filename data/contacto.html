@@ -7,8 +7,10 @@
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="icon" href="../images/favicon.ico">
-
+    
     <title>Contacto</title>
+
+    <script src="../script.js"></script>
 </head>
 
 <body>
@@ -16,7 +18,7 @@
      <!--Cabezera Con Logo +  Navegacion + atajos-->
 
     <header>
-        <a href="../index.html" alt" "><div class="logo_hotel"></div></a>
+        <a href="../index.html" alt""><div class="logo_hotel"></div></a>
         <div id="naveHotel">
             <nav>
                 <ul class="nav_hotel">
@@ -43,32 +45,32 @@
         <h2>CONTACTO</h2>
 
         <!-- Formulario de Contacto -->
-        <form action="" method="get" id="form-contacto">
+        <form action="" id="form">
 
             <!-- Nombre -->
-            <div class="form-control">
+            <div class="form-control" id="grupoNombre">
                 <label for="">Nombre: </label>
-                <input type="text" name="first-name" id="first-name" required>
+                <input type="text" name="" id="nombreContacto">
             </div>
 
-            <div class="error" id="error-firstname"></div>
+            <div class="error" id="error-nombre"></div>
 
             <br>
 
             <!-- Apellido -->
             <div class="form-control">
                 <label for="">Apellido: </label>
-                <input type="text" name="last-name" id="last-name" required>
+                <input type="text" name="" id="apellidoContacto">
             </div>
 
-            <div class="error" id="error-lastname"></div>
+            <div class="error" id="error-apellido"></div>
 
             <br>
 
             <!-- Email -->
             <div class="form-control">
                 <label for="">Mail</label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="" id="emailContacto" placeholder="ejemplo@gmail.com">
             </div>
 
             <div class="error" id="error-email"></div>
@@ -77,8 +79,8 @@
 
             <!-- Teléfono -->
             <div>
-                <label for="">Nº de Teléfono: </label>
-                <input type="number" name="telefono" id="telefono" maxlength="15" required>
+                <label for="" id="telefono">Nº de Teléfono: </label>
+                <input type="number" name="" id="telefonoContacto" maxlength="15" placeholder="Ej: 11111111">
             </div>
 
             <div class="error" id="error-telefono"></div>
@@ -87,7 +89,7 @@
 
             <!-- Medio de Contacto -->
             <div><label for="">Elige el medio para contactarte</label>
-                <select name="medio-Contacto" id="medio-Contacto" required>
+                <select name="medio-Contacto" id="medio-Contacto">
                     <option value="">Mail</option>
                     <option value="">Mensaje</option>
                     <option value="">Whatsapp</option>
@@ -111,14 +113,14 @@
             <!-- Términos y Condiciones -->
             <div>
                 <label for="">Acepto los términos y condiciones</label>
-                <input type="checkbox" required>
+                <input type="checkbox" id="acepto-terminos-contacto">
             </div>
 
             <br>
 
             <!-- Botón de Enviar -->
             <button type="submit">Enviar</button>
-
+            <p id="warnings"></p>
             <div>
             </div>
         </form>
