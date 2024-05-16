@@ -5,6 +5,7 @@
 
 body{
     overflow-x: hidden;
+    align-items: center;
 }
 
 
@@ -291,3 +292,21 @@ nav {
     margin: 2%;
 }
 
+
+/* ---- FORMULARIO-CONTACTO ---- */
+
+form {
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+    margin: 3vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#contacto-formulario {
+    text-align: center;
+    margin-top: 3vh;
+    
+}
