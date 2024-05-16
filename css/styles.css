@@ -5,6 +5,7 @@
 
 body{
     overflow-x: hidden;
+    align-items: center;
 }
 
 
@@ -274,6 +275,7 @@ nav {
     margin: 2%;
 }
 
+<<<<<<< HEAD
 .mapa_habitacion{
     position: relative;
     width: 500px;
@@ -535,3 +537,23 @@ nav {
     flex-direction: row;
 }
 
+=======
+
+/* ---- FORMULARIO-CONTACTO ---- */
+
+form {
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+    margin: 3vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#contacto-formulario {
+    text-align: center;
+    margin-top: 3vh;
+    
+}
+>>>>>>> 041b34938a4b78f5a923fca6d80a20bff1a58312

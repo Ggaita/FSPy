@@ -1,3 +1,6 @@
+
+/* CARROUSELL */
+
 const carrousell = document.querySelector(".carrousel-items");
 
 let maxScrollLeft = carrousell.scrollWidth - carrousell.clientWidth;
@@ -29,6 +32,15 @@ carrousell.addEventListener("mouseout", () => {
 
 start(); 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+/* VALIDACIÓN FORMULARIO*/
+>>>>>>> 041b34938a4b78f5a923fca6d80a20bff1a58312
 
 document.addEventListener("DOMContentLoaded", function(){
     var visible = false;
