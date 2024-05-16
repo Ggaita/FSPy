@@ -16,7 +16,7 @@ const start = () => {
 }
 
 const stop = () => {
- clearInterval(intervalo);
+    clearInterval(intervalo);
 }
 
 carrousell.addEventListener("mouseover", () => {
@@ -29,92 +29,93 @@ carrousell.addEventListener("mouseout", () => {
 
 start(); 
 
-/* VALIDACIÓN FORMULARIO*/
 
-const nombre = document.getElementById("nombreContacto")
-const apellido = document.getElementById("apellidoContacto")
-const email = document.getElementById("emailContacto")
-const telefono = document.getElementById("telefonoContacto")
-const formulario = document.getElementById("form")
-const parrafo = document.getElementById("warnings")
+document.addEventListener("DOMContentLoaded", function(){
+    var visible = false;
 
-formulario.addEventListener("submit", e=>{
-    e.preventDefault()
-    regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    let warnings = ""
-    let entrar = false;
 
-    if(nombre.value.length < 3){
-        warnings += 'El nombre es muy corto'
-        entrar = true;
+    function MapHabitacion(){
+        const mapa_habitacion = document.getElementById("mapa_habitacion");
+        const img_habitacion = document.getElementById("img_habitacion");
+
+        if(!visible){
+            mapa_habitacion.style.display = "flex";
+            img_habitacion.style.display = "flex";
+            
+            visible = true;
+        } else{
+            mapa_habitacion.style.display = "none";
+            img_habitacion.style.display = "none";
+
+            visible = false;
+        }
     }
 
-    if(apellido.value.length < 3){
-        warnings += 'El apellido es muy corto'
-        entrar = true
+    document.getElementById("vistaHab").addEventListener("click", MapHabitacion);
+
+    function Saludo() {
+        const imagen = document.getElementById("img_pinte");
+        const txt_desc_hab = document.getElementById("txt_desc_hab")
+
+
+        if (!visible) {
+        imagen.style.display = "block";
+        txt_desc_hab.style.display = "block";
+
+        visible = true;
+    } else {
+        imagen.style.display = "none";
+        txt_desc_hab.style.display = "none";
+
+        visible = false;
+    }
     }
 
-    if(regexEmail.test(email.value)){
-        warnings += 'El email no es valido'
-        entrar = true
-    }
 
-    if(entrar){
-        parrafo.innerHTML = warnings
+
+
+    document.getElementById("cir-1").addEventListener("click", Saludo);
+    document.getElementById("img_pinte").addEventListener("click", Saludo);
+
+
+    function Hab_2(){
+       
+        const imagen_dos = document.getElementById("img_btr");
+        const txt_desc_banio = document.getElementById("txt_desc_banio");
+   
+        if (!visible) {
+            imagen_dos.style.display = "block";
+            txt_desc_banio.style.display = "block";
+            visible = true;
+        } else {
+            imagen_dos.style.display = "none";
+            txt_desc_banio.style.display = "none";
+            visible = false;
+        }
+   
     }
+        document.getElementById("cir-2").addEventListener("click", Hab_2);
+        document.getElementById("img_btr").addEventListener("click", Hab_2);
+
+
+
+
+    function Hab_3(){
+       
+        const imagen_tres = document.getElementById("img_dobl");
+        const txt_desc_amob = document.getElementById("txt_desc_amob");
+   
+        if (!visible) {
+            imagen_tres.style.display = "block";
+            txt_desc_amob.style.display= "block";
+            visible = true;
+        } else {
+            imagen_tres.style.display = "none";
+            txt_desc_amob.style.display= "none";
+            visible = false;
+        }
+   
+    }
+        document.getElementById("cir-3").addEventListener("click", Hab_3);
+        document.getElementById("img_dobl").addEventListener("click", Hab_3);
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const formulario = document.getElementById("form");
-const inputs = document.querySelectorAll("#form input")
-
-const expresiones = {
-    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, //Letras y Espacios, pueden llevar acento
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    telefono: /^\d{7,14}$/ //de 7 a 14 números
-}
-
-const validarFormulario = (e) => {
-    switch (e.target.name){
-        case "nombreContacto":
-            if(expresiones.nombre.test(e.target.value)){
-                console.log('Funciona')
-            }
-        break;
-
-        case "apellidoContacto":
-            
-        break;
-
-        case "emailContacto":
-            
-        break;
-
-        case "telefonoContacto":
-            
-        break;
-    }
-}
-
-inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-});
-
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-});*/

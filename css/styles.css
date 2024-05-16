@@ -107,6 +107,7 @@ nav {
 .container{
     background-color: white;
     font-family: "DM Sans", sans-serif;
+    width: 100%;
 }
 
 
@@ -135,6 +136,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn_consultas button{
@@ -152,34 +154,21 @@ nav {
     transition: all 0.5s ease;
 }
 
-/* -----  CARROUSELL-INDEX ----- */ 
-
-.carrousel-items {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding: 50px 0px;
+.vistaHab button{
+    margin: 5px;
+    font-family: "DM Sans", sans-serif;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
 }
 
-.carrousel-item {
-    min-width: 800px;
-    max-width: 1500px;
-
+.vistaHab button:hover{
+    background-color: #104C97;
+    color: #dee2e6;
+    transition: all 0.5s ease;
 }
 
-.carrousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carrousel-item:hover {
-    transform: scale(1.2);
-    transition-duration:2s;
-}
-
-
-/* -----  CHECKIN-INDEX ----- */ 
 
 .cheecking_home{
     display: flex;
@@ -232,8 +221,6 @@ nav {
     padding: 0%;
 }
 
-
-
 /* -----  SERVICIOS-QUIENES SOMOS ----- */ 
 
 
@@ -243,24 +230,6 @@ nav {
     justify-content: center;
     margin-top: 5%;
 }
-
-
-.service img {
-    width: 500px;
-    height: auto;
-    
-}
-
-#contenedor {
-    width: 23%;
-    text-align: center;
-    display: inline-block;
-    justify-items:center ;
-    margin: 2%;
-}
-
-/* -----  RESUMEN DE SERVICIOS-QUIENES SOMOS  ----- */ 
-
 
 .resumen_grilla {
     margin-top: 7%;
@@ -286,8 +255,283 @@ nav {
 }
 
 
+#contenedor {
+    width: 23%;
+    text-align: center;
+    display: inline-block;
+    justify-items:center ;
+    margin: 2%;
+}
+
+.service img {
+    width: 500px;
+    height: auto;
+    
+}
+
 #ico {
     width: 50px;
     margin: 2%;
+}
+
+.mapa_habitacion{
+    position: relative;
+    width: 500px;
+    height:400px;
+    margin-top: 40px;
+}
+
+
+.img_plano{
+    object-fit: cover;
+    z-index: 1;
+    width: 500px;
+    height:400px;
+}
+
+
+.img_pinte {
+    object-fit: cover;
+    z-index: 50;
+    display: none;
+    position: relative;
+    width: 400px;
+    height:300px;
+    margin-right: 20px;
+    border-radius: 5px;
+
+}
+
+
+.circulo{
+    position: absolute;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background-color: #E0FFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+.circulo-1 {
+    top: 80px; 
+    left: 65%; 
+}
+
+
+.circulo-2 {
+    top: 150px; 
+    left: 85%; 
+}
+
+.circulo-3 {
+    top: 310px; 
+    left: 65%; 
+}
+
+.contain_hab_map{
+    display: none;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.contain_hab_map.visible{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.vistaHab{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+.mapa_habitacion, .img_habitacion {
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 1s ease; 
+}
+
+.mapa_habitacion.visible {
+    opacity: 1; 
+    visibility: visible; 
+    transition: opacity 1s ease;
+}
+
+.img_habitacion.visible{
+    opacity: 1; 
+    visibility: visible; 
+    transition: opacity 5s ease;
+    padding-top: 5%;
+    margin-bottom: 10px;
+
+}
+
+.hab_map_container{
+    display: flex;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+
+.map_hab_cama {
+    flex-grow: 1;
+    margin-left: 10px; 
+    display: none;
+}
+
+.map_hab_detalle {
+    display: flex;
+    margin-bottom: 10px;
+    min-height: 20px;
+    max-height: 50px;
+    background-color: #E6E6FA;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.map_hab_detalle img {
+    margin-right: 10px; 
+}
+
+.map_hab_detalle p {
+    margin: 0; 
+}
+
+.map_hab_ducha{
+    display: flex;
+    flex-direction: row;
+}
+
+.mapa_habitacion{
+    position: relative;
+    width: 500px;
+    height:400px;
+    margin-top: 40px;
+}
+
+
+.img_plano{
+    object-fit: cover;
+    z-index: 1;
+    width: 500px;
+    height:400px;
+}
+
+
+.img_pinte {
+    object-fit: cover;
+    z-index: 50;
+    display: none;
+    position: relative;
+    width: 400px;
+    height:300px;
+    margin-right: 20px;
+    border-radius: 5px;
+
+}
+
+
+.circulo{
+    position: absolute;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background-color: #E0FFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+.circulo-1 {
+    top: 80px; /* Ajusta la posición del primer círculo */
+    left: 40%; /* Ajusta la posición del primer círculo */
+}
+
+
+.circulo-2 {
+    top: 150px; /* Ajusta la posición del segundo círculo */
+    left: 65%; /* Ajusta la posición del segundo círculo */
+}
+
+
+.circulo-3 {
+    top: 310px; /* Ajusta la posición del tercer círculo */
+    left: 40%; /* Ajusta la posición del tercer círculo */
+}
+
+
+.contain_hab_map{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.vistaHab{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+
+
+}
+
+.mapa_habitacion{
+    display: none;
+    width: 50%;
+    justify-content: center;
+}
+
+.img_habitacion {
+    display: flex;
+    width: 60%;
+    margin-top: 5%;
+}
+
+.hab_map_container{
+    display: flex;
+    border-radius: 20px;
+}
+
+.map_hab_cama {
+    flex-grow: 1;
+    margin-left: 10px; 
+    display: none;
+}
+
+.map_hab_detalle {
+    display: flex;
+    margin-bottom: 10px;
+    min-height: 20px;
+    max-height: 50px;
+    width: 100%;
+    background-color: #E6E6FA;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+}
+
+.map_hab_detalle img {
+    margin-right: 10px; 
+}
+
+.map_hab_detalle p {
+    margin: 0; 
+}
+
+.map_hab_ducha{
+    display: flex;
+    flex-direction: row;
 }
 
