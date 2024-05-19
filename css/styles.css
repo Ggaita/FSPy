@@ -1,35 +1,47 @@
 /* BODY-ROOT */ 
 body{
     overflow-x: hidden;
+    background-color: #d8dce09f;
+    background-image: url("../images/background-image.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 /* -----  HEADER-ROOT ----- */ 
 header {
     display: flex;
     width: 100%;
-    height: 110px;
-    background-color: hsla(146, 42%, 30%, 0.212);
-    border-bottom: 8px solid rgb(221, 220, 220);
+    height: 140px;
+    background-color: hsla(146, 69%, 63%, 0.226);
+    border-bottom: 8px solid rgb(24, 189, 38);
 }
 
 header a {
-    color: black;
+    color: rgb(48, 53, 43);
+    padding-top: 2vh;
     margin: 1vw;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-weight: 700;
     font-style:normal;
+    font-variation-settings:
+    "wdth" 100;
 }
 
-header a:hover {
-    color: hsl(0, 90%, 54%);
-    font-size: 3.2vh;
-    transition: all 0.5s ease;
+header .nav_hotel a:hover {
+    color: black;
+    border: 1px solid black;
+    background-color: hsla(140, 89%, 48%, 0.473);;
+    border-radius: 8px;
+    padding: 0.8vh;
+    font-size: 2.6vh;
+    transition:  0.5s;
     font-weight:bold;
     filter: drop-shadow(-5px 6px 1px hsla(0, 7%, 3%, 0.151));
 }
 nav {
     display: flex;
 }
-
 
 .logo_hotel {
     background-image: url(../images/logo_hotel.png);
@@ -45,10 +57,11 @@ nav {
     flex-wrap: nowrap;
 }
 
-
 #logo {
     margin: 0;
+    padding: 0;
 }
+
 
 .nav_hotel {
     display: flex;
@@ -60,7 +73,8 @@ nav {
     font-size: 1.5rem;
 }
 .nav_hotel li {
-    margin: 6px;
+    padding-top: 1.7vh;
+    margin: 1vh;
     align-items: center;
     justify-content: flex-start;
 }
@@ -86,8 +100,9 @@ nav {
 /* -----  BARRAS-INDEX ----- */ 
 
 .container{
-    background-color: white;
-    font-family: "DM Sans", sans-serif;
+    background-color: rgba(255, 255, 255, 0.185);
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
     width: 100%;
 }
 
@@ -95,8 +110,10 @@ nav {
 .hotel{
     justify-content: start;
     align-items: start;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
     font-size: 36px;
-    color: #104C97;
+    color: rgb(48, 53, 43);
 }
 .res_calif{
     display: flex;
@@ -116,23 +133,59 @@ nav {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: black;
+    
 }
 
 .btn_consultas button{
     margin: 5px;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
     padding: 10px 16px;
     border-radius: 5px;
     border: none;
     font-weight: bold;
+    background-color: none;
 }
 .btn_consultas button:hover{
-    background-color: #104C97;
-    color: #dee2e6;
+    border: 1px solid black;
+    background-color: hsla(140, 89%, 48%, 0.473);
+    border-radius: 8px;
     transition: all 0.5s ease;
 }
 
+
+/* -----  BODY ----- */
+
+.titulo {
+    margin-top: 9vh;
+    text-align: center;
+    background-color: #e4e6e785;
+    width: 98%;
+    padding-bottom: 2vh;
+}
+
+.titulo h1 {
+    padding-top: 1vh;
+}
+
+
+.titulo p {
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+
+
+
 /* -----  CARROUSELL-INDEX ----- */ 
+
+.carrousell {
+    margin-top: 5vh;
+    border-top: 5px solid rgb(24, 189, 38);
+    border-bottom: 5px solid rgb(24, 189, 38);
+    width: 98%;
+}
 
 .carrousel-items {
     display: flex;
@@ -144,6 +197,8 @@ nav {
 .carrousel-item {
     min-width: 800px;
     max-width: 1500px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 
 }
 
@@ -166,7 +221,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #dee2e6;
+    background-color: #f1f3f5;
     color: rgb(82, 89, 97);
     font-size: 16px;
 }
@@ -478,12 +533,18 @@ form {
 .habitaciones-titulo {
     margin: 2vh;
     text-align: center;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-size: 3rem;
     font-weight: bold;
+    color: rgb(48, 53, 43);
+    padding-top: 2vh;
 }
 
 hr {
-    color: black;
-    width: 80%;
+    background-color: rgb(24, 189, 38);
+    width: 98%;
+    height: 5px;
 }
 
 .habita {
@@ -491,12 +552,26 @@ hr {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     margin-top: 5vh;
     margin-bottom: 5vh;
+    background-color: rgba(255, 255, 255, 0.185);
+    width: 98%;
+}
+
+.habita h3 {
+    font-size: 2rem;
 }
 
 
-
+.habita p {
+    font-size: 1.2rem;
+}
 
 .parrafo-habitaciones {
     width: 65vw;
@@ -505,6 +580,8 @@ hr {
 
 .parrafo-habitaciones ul li {
     align-self: center;
+    font-size: 2.2rem;
+    margin-top: 2vh;
 }
 
 
@@ -518,6 +595,9 @@ hr {
 
 .armador ul li{
     margin-right: 3vw;
+    font-size: 1.2rem;
+    padding-top: 4vh;
+    list-style:inside ;
 }
 
 .armador p {
@@ -526,6 +606,7 @@ hr {
 
 .fotohab {
     width: 28vw;
+    border: 1px solid black;
 }
 
 .fototira {
@@ -534,5 +615,5 @@ hr {
 }
 
 .fototira img {
-    padding-top: 1vh;
+    margin-top: 1vh;
 }
