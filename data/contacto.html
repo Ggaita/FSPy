@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <script src="../script.js" defer></script>
+    <script src="contacto.js" defer></script>
     <title>CONTACTO</title>
 </head>
 
@@ -34,82 +34,119 @@
             </nav>
         </div>
     </header>
-    <main>
-        <h2 id="contacto-formulario">CONTACTO</h2>
+    <main class="container_form">
+       
+        <h2>CONTACTO</h2>
+    <!-- Formulario de Contacto -->
+    <form action="" class="form_contacto" id="form_contacto">
 
-        <!-- Formulario de Contacto -->
 
-        <form action="" id="form">
-
-            <!-- Nombre -->
-            <div class="form-control" id="grupoNombre">
-                <label for="">Nombre: </label>
-                <input type="text" name="" id="nombreContacto">
+        <!-- Grupo Nombre -->
+        <div class="form_control" id="form_control_nombre">
+            <label for="usuario" class="formulario_label">Nombre: </label>
+            <div class="formulario_grupo_input">
+                <input class="formulario_input" type="text" name="nombre" id="usuario" required placeholder="Pablo">
+                <img class="formulario_validacion_estado_cheeck" width="25" height="25" src="https://img.icons8.com/emoji/48/check-mark-emoji.png" alt="check-mark-emoji"/>
+                <svg class="formulario_validacion_estado_cancel" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
+                    <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
+                </svg>
             </div>
-            <div class="error" id="error-nombre"></div>
-            <br>
+            <p class="formulario_input_error" >El usuario no puede ser de 4 a 16 digitos</p>
+        </div>
 
-            <!-- Apellido -->
-            <div class="form-control">
-                <label for="">Apellido: </label>
-                <input type="text" name="" id="apellidoContacto">
+
+        <!-- Grupo Apellido -->
+       
+            <div class="form_control" id="form_control_apellido" >
+                <label for="apellido" class="formulario_label">Apellido</label>
+                <div class="formulario_grupo_input">
+                    <input class="formulario_input" type="text" name="apellido" id="apellido" required placeholder="Peréz">
+                    <img class="formulario_validacion_estado_cheeck" width="25" height="25" src="https://img.icons8.com/emoji/48/check-mark-emoji.png" alt="check-mark-emoji"/>
+                    <svg class="formulario_validacion_estado_cancel" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
+                        <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
+                    </svg>
+                </div>
+                <p class="formulario_input_error">El apellido no puede ser de 4 a 16 digitos</p>
             </div>
-            <div class="error" id="error-apellido"></div>
-            <br>
-
-            <!-- Email -->
-            <div class="form-control">
-                <label for="">Mail</label>
-                <input type="email" name="" id="emailContacto" placeholder="ejemplo@gmail.com">
+           
+       
+        <!-- Grupo Mail -->
+        <div class="form_control" id="form_control_email" >
+            <label for="email" class="formulario_label">Email</label>
+            <div class="formulario_grupo_input">
+                <input class="formulario_input" type="email" name="email" id="email" required placeholder="email@email.com">
+                <img class="formulario_validacion_estado_cheeck" width="25" height="25" src="https://img.icons8.com/emoji/48/check-mark-emoji.png" alt="check-mark-emoji"/>
+                <svg class="formulario_validacion_estado_cancel" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
+                    <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
+                </svg>
             </div>
-            <div class="error" id="error-email"></div>
-            <br>
+            <p class="formulario_input_error">El mail debe contener los caractares @ y .</p>
+        </div>
 
-            <!-- Teléfono -->
-            <div>
-                <label for="" id="telefono">Nº de Teléfono: </label>
-                <input type="number" name="" id="telefonoContacto" maxlength="15" placeholder="Ej: 11111111">
+
+        <!-- Grupo Teléfono -->
+        <div class="form_control" id="form_control_telefono" >
+            <label for="telefono" class="formulario_label">Teléfono</label>
+            <div class="formulario_grupo_input">
+                <input class="formulario_input" name="telefono" id="telefono" required placeholder="1122334455">
+                <img class="formulario_validacion_estado_cheeck" width="25" height="25" src="https://img.icons8.com/emoji/48/check-mark-emoji.png" alt="check-mark-emoji"/>
+                <svg class="formulario_validacion_estado_cancel" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
+                    <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
+                </svg>
             </div>
-            <div class="error" id="error-telefono"></div>
-            <br>
+            <p class="formulario_input_error">El mail debe contener los caractares @ y .</p>
+        </div>
 
-            <!-- Medio de Contacto -->
-            <div><label for="">Elige el medio para contactarte</label>
-                <select name="medio-Contacto" id="medio-Contacto">
+
+        <!--Grupo Medio de Contacto -->
+        <div class="form_control" id="form_control_contacto">
+            <label for="contacto"  class="formulario_label">Elige el medio para contactarte</label>
+            <div class="formulario_grupo_select">
+                <select class="form_control_contacto" name="medio_contacto" id="form_control_contacto" required>
                     <option value="">Mail</option>
                     <option value="">Mensaje</option>
                     <option value="">Whatsapp</option>
                     <option value="">Llamada</option>
                 </select>
             </div>
-            <br>
+           
+        </div>
 
-            <!-- Comentario -->
-            <div>
-                <label for="">Déjanos tu consulta:</label>
-                <br>
-                <textarea name="" id=""></textarea>
-            </div>
-            <br>
 
-            <!-- Términos y Condiciones -->
-            <div id="condiciones">
-                <div>
-                    <label for="">Acepto los términos y condiciones</label>
-                </div>
-                <div>
-                    <input class="mycheque" type="checkbox" id="acepto-terminos-contacto">
-                </div>
-            </div>
-            <br>
+        <!--Grupo Comentario-->
+        <div class="form_control" id="form_control_comentario">
+            <label for="comentario" class="formulario_label">Déjanos tu consulta:</label>
+            <div class="formulario_grupo_text">
+                <textarea name="" id="" placeholder="Comentario..."></textarea>
+            </div>  
+        </div>
+       
+        <!-- Grupo de Términos y Condiciones -->
+        <div class="form_control form_control_terminos" id="form_control_terminos">
+            <label class="formulario_label" for="">
+                <input class="formulario_cheekbox" type="checkbox" name="terminos" id="terminos" required>
+                Acepto los Terminos y Condiciones
+            </label>
+        </div>
 
-            <!-- Botón de Enviar -->
-            <div>
-            <button type="submit">Enviar</button>
-            <p id="warnings"></p>
-            </div>
-        </form>
+
+        <!-- Grupo mensaje de error al usuario-->
+        <div class="form_control form_control_error" id="form_control_error">
+            <p><img width="15px" height="15px" src="https://img.icons8.com/metro/26/error.png" alt="error"/><b>Complete el formulario correctamente</b></p>
+        </div>
+
+
+        <!-- Grupo boton enviar formulario-->
+       
+        <div class="form_control formulario_btn_enviar">
+            <button type="submit" id="btn_enviar" class="formulario_btn">Enviar</button>
+            <p class="formulario_mensaje_exito" id="formulario_mensaje_exito">Formulario exitoso!</p>
+        </div>
+       
+       
+    </form>
     </main>
+
     <footer>
         <div class="info_footer">
                 <h2>¿En qué lo podemos ayudar?</h2>
