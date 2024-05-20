@@ -7,6 +7,11 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+
+a:link:visited {
+ text-decoration: none 
+}
+
 /* -----  HEADER-ROOT ----- */ 
 header {
     display: flex;
@@ -16,32 +21,30 @@ header {
     border-bottom: 8px solid rgb(24, 189, 38);
 }
 
-header a {
+
+header .nav_hotel  {
     color: rgb(48, 53, 43);
-    padding-top: 2vh;
-    margin: 1vw;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing:auto ;
-    font-weight: 700;
-    font-style:normal;
-    font-variation-settings:
-    "wdth" 100;
+    padding-top: 5vh;
 }
 
-header .nav_hotel a:hover {
+header .nav_hotel li:hover a:hover {
     color: black;
     border: 1px solid black;
-    background-color: hsla(140, 89%, 48%, 0.473);;
+    background-color: hsla(140, 89%, 48%, 0.473);
     border-radius: 8px;
-    padding: 0.8vh;
-    font-size: 2.6vh;
+    font-size: 1.2rem;
     transition:  0.5s;
-    font-weight:bold;
     filter: drop-shadow(-5px 6px 1px hsla(0, 7%, 3%, 0.151));
+    text-align: center;
+
 }
+
+
 nav {
     display: flex;
 }
+
+
 
 .logo_hotel {
     background-image: url(../images/logo_hotel.png);
@@ -62,34 +65,41 @@ nav {
     padding: 0;
 }
 
+#naveHotel nav {
+    justify-content: center;
+    align-items: center;
+    padding-left: 20vw;
+}
 
 .nav_hotel {
     display: flex;
     flex-direction: row;
     list-style:none;
     position: relative;
+    text-align: center;
 }
-.nav_hotel a {
-    font-size: 1.5rem;
+
+.nav_hotel li a {
+    margin-left: 1vw;
+    padding: 0.5vw;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-style:normal;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
-.nav_hotel li {
-    padding-top: 1.7vh;
-    margin: 1vh;
-    align-items: center;
-    justify-content: flex-start;
+
+a:link {
+    text-decoration: none;
 }
+
+
 .nav_atajos {
     font-size: 1.1rem;
-    margin-right: 1vw;
+    margin-right: 0.5vw;
     color: hsla(118, 36%, 82%, 0.39);
 }
-#naveHotel {
-    margin-left: 0px;
-    position:relative;
-    margin: 2vh;
-    padding-left: -20vw;
-    
-}
+
 
 /* -----  MAIN-ROOT ----- */ 
 .info_adicional{
@@ -215,15 +225,17 @@ nav {
 
 
 
-/* ----- CHECKIN-INDEX ----- */
+
+/* -----  FOOTER-ROOT ----- */ 
 
 .cheecking_home{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #f1f3f5;
-    color: rgb(82, 89, 97);
-    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.185);
+    color: rgb(48, 53, 43);
+    font-size: 1rem;
+    text-align: center;
 }
 .contactos_home{
     display: inline-flex;
@@ -234,29 +246,45 @@ nav {
     padding: 20px 20px 20px 20px;
 }
 
-/* -----  FOOTER-ROOT ----- */ 
+
+footer {
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+
+footer h2 {
+    margin-top: 2vh;
+}
+
+footer span {
+    margin-bottom: 2vh;
+}
+
 .info_footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
     margin: 50px 0 50px 0;
 }
 .info_footer h2{
     font-size: 25px;
-    color: #104C97;
+    color: rgb(48, 53, 43);
 }
 .contacto_footer{
     display: flex;
     flex-direction: column;
+    text-align: center;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 1.2rem;
 }
 .media_footer{
     display: flex;
     flex-direction: row;
     padding: 0%;
+    margin: 1vw;
 }
 
 
@@ -266,21 +294,30 @@ nav {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 6vh;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    color: rgb(48, 53, 43);
+    align-items: center;
 }
 
 .service img {
-    width: 500px;
+    width: 900px;
     height: auto;
-
+    align-items: center;
 }
 
 #contenedor {
     width: 23%;
     text-align: center;
     display: inline-block;
-    justify-items:center ;
+    justify-items: center;
     margin: 2%;
+}
+
+#contenedor p {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 /* -----  RESUMEN DE SERVICIOS-QUIENES SOMOS  ----- */
@@ -297,14 +334,19 @@ nav {
 #cuadros {
     border: 1px solid black;
     border-radius: 5px;
-    width: 350px;
-    height: 250px;
+    width: 20vw;
+    height: 30vh;
     align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 2%;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    color: rgb(48, 53, 43);
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 #contenedor {
@@ -316,14 +358,15 @@ nav {
 }
 
 .service img {
-    width: 500px;
+    width: 700px;
     height: auto;
+    border: 2px solid black;
 
 }
 
 #ico {
-    width: 50px;
-    margin: 2%;
+    width: 4vw;
+    margin: 1%;
 }
 
 /*BOTON PARA VISUALIZAR MAPA*/
@@ -511,21 +554,156 @@ nav {
 
 /* ---- FORMULARIO-CONTACTO ---- */
 
+#contacto-formulario {
+    margin: 2vh;
+    text-align: center;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(48, 53, 43);
+    padding-top: 2vh;
+    
+}
+
 form {
     text-align: center;
     margin: auto;
     border: 1px solid black;
-    margin: 3vh;
     display: flex;
     flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.185);
+    width: 98%;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin: 2vh;
+    text-align: center;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input {
+    width: 25vw;
+    height: 3vh;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(48, 53, 43);
+    background-color: #85d6ae75;
+    border: 0.1px solid black;
+}
+
+    input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+}
+
+select {
+    width: 25vw;
+    height: 3vh;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(48, 53, 43);
+    background-color: #85d6ae75;
+    border: 0.1px solid black;
 
 }
 
-#contacto-formulario {
-    text-align: center;
-    margin-top: 3vh;
+textarea {
+    width: 40vw;
+    height: 25vh;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(48, 53, 43);
+    background-color: #85d6ae75;
+    border: 0.1px solid black;
+}
+
+#condiciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
+
+#condiciones label {
+    padding-left: 10vw;
+    margin-right: 0;
+}
+
+#condiciones input {
+    padding-right: 10vw;
+    margin-right: 0;
+}
+
+
+
+input[type="checkbox"]:disabled:checked {
+    appearance: none;
+    background-color: #85d6ae75;
+}
+
+
+
+button {
+    width: 40vw;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(48, 53, 43);
+    background-color: #85d6ada1;
+    border: 0.1px solid black;
+    filter: drop-shadow(-5px 6px 1px rgba(100, 98, 98, 0.445));
+}
+
+button:hover {
+    background-color: hsla(140, 89%, 48%, 0.473);
+}
+
+/* ---- DONDE ENCONTRARNOS ---- */
+
+.ubi-mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+.ubi-mapa h3 {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    color: rgb(48, 53, 43);
+    font-size: 2rem;
+}
+
+.ubi-mapa p {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    color: rgb(48, 53, 43);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 2vw;
+}
+
+.mapatexto {
+    width: 50vw;
+    box-sizing: content-box;
+}
+
 
 
 /* ---- HABITACIONES ---- */
@@ -578,9 +756,9 @@ hr {
     margin-top: 4vh;
 }
 
-.parrafo-habitaciones ul li {
+.parrafo-habitaciones {
     align-self: center;
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-top: 2vh;
 }
 
@@ -595,9 +773,9 @@ hr {
 
 .armador ul li{
     margin-right: 3vw;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding-top: 4vh;
-    list-style:inside ;
+    list-style: inside;
 }
 
 .armador p {
@@ -605,7 +783,7 @@ hr {
 }
 
 .fotohab {
-    width: 28vw;
+    width: 700px;
     border: 1px solid black;
 }
 
@@ -616,4 +794,47 @@ hr {
 
 .fototira img {
     margin-top: 1vh;
+}
+
+
+
+@media (min-width: 481px) and (max-width: 980px) {
+    
+
+header a {
+    color: rgb(48, 53, 43);
+    padding-top: 1vh;
+    margin: 0.5vw;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing:auto ;
+    font-weight: 500;
+    font-style:normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.nav_hotel {
+    padding-left: 2vw;
+}
+
+
+.nav_hotel li {
+    padding-top: 1.0vh;
+    margin: 0.9vh;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav_hotel a {
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+}
+
+
+@media (min-width: 380px) and (max-width: 520px) {
+    
+ 
+
 }
