@@ -5,6 +5,7 @@ body{
     background-color: #d8dce09f;
     background-image: url("../images/background-image.png");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     justify-content: center;
     padding: 5px;
@@ -731,7 +732,7 @@ hr {
     padding-bottom: 3vh;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    background-color: rgba(255, 255, 255, 0.185);
+    background-color: rgba(245, 236, 236, 0.185);
     width: 98%;
 }
 
@@ -798,7 +799,7 @@ hr {
 
 
 
-@media (min-width: 481px) and (max-width: 1000px) {
+@media (min-width: 500px) and (max-width: 1366px) {
     
     .logo_hotel {
         background-image: url(../images/logo_hotel.png);
@@ -814,10 +815,9 @@ hr {
     }
 
     .nav_hotel {
-        border: 1px solid black;
         width: 80vw;
         position: absolute;
-        left: 17vw;
+        left: 16%;
         top: 1vh;
     }
 
@@ -826,10 +826,9 @@ hr {
         font-family: "Inconsolata", monospace;
         font-style:normal;
         margin: 1vw;
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 1.2rem;
+        font-weight: 700;
         color: #2f3e46;
-        border: 1px solid black;
         justify-content: center;
         align-items: center;
         position: relative;
