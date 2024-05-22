@@ -1062,8 +1062,7 @@ hr {
 /*Media query para celular*/
 
 @media screen and (max-width: 425px) {
-
-    header{
+    header {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1073,141 +1072,106 @@ hr {
     }
 
     header > div {
-        flex: 1; 
+        flex: 1;
+        padding: 0 15px; /* Agregar padding interno */
     }
 
-    header .logo_hotel{
+    header .logo_hotel {
         display: flex;
-        
-    }  
-     header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        overflow: hidden;
-        border-bottom: none;
-        height: 100%;
     }
 
-    header > div {
-        flex: 1; 
-    }
-
-    header .logo_hotel{
-        display: flex;
-        
-    }  
-    
     nav {
         display: flex;
         width: 100%;
     }
 
-    nav ul{
+    nav ul {
         height: 25px;
         border: none;
         width: 100%;
         display: flex;
-        justify-content:  space-between;
+        justify-content: space-between;
+        padding: 0 15px; /* Agregar padding interno */
     }
 
     #naveHotel nav {
         justify-content: center;
         align-items: center;
         padding-left: 0;
-       
     }
 
-
-    .nav_hotel{
+    .nav_hotel {
         display: none;
     }
 
-    .nav_hotel_responsive{
+    .nav_hotel_responsive {
         display: flex;
         font-size: 50px;
         border-bottom: none;
         width: 100%;
-        justify-content: space-between
+        justify-content: space-between;
+        padding: 0 15px; /* Agregar padding interno */
     }
 
-    nav {
-        display: flex;
-        width: 100%;
+    .container {
+        padding: 0 15px; /* Agregar padding interno */
     }
 
-    nav ul{
-        height: 25px;
-        border: none;
-        width: 100%;
-        display: flex;
-        justify-content:  space-around;
-    }
-
-
-    .nav_hotel{
-        display: none;
-    }
-
-    .nav_hotel_responsive{
-        display: flex;
-        font-size: 50px;
-        border-bottom: none;
-        width: 100%;
-        justify-content: space-around
-    }
-
-    .container{
-        margin: 0;
-        padding: 5px;
-    }
-
-    .info_adicional{
+    .info_adicional {
         display: flex;
         flex-direction: column;
         margin: 10px;
     }
 
-
-    .hotel{
+    .hotel {
         display: flex;
         justify-content: center;
     }
 
-    .clasif_span{
+    .clasif_span {
         display: none;
     }
-    .res_calif{
+
+    .res_calif {
         display: flex;
         flex-direction: column;
     }
 
-    .btn_consultas{
+    .btn_consultas {
         display: flex;
         flex-direction: column;
         margin: 10px;
     }
 
-    .btn_consultas button{
+    .btn_consultas button {
         font-size: 15px;
     }
 
-    .titulo{
+    .titulo {
         font-size: 15px;
         padding: 10px;
         margin-top: 10px;
     }
 
-    .titulo p{
+    .titulo p {
         font-size: 15px;
     }
-    .cheecking_home{
+
+    .cheecking_home {
         display: flex;
         flex-direction: column;
     }
 
-    .contactos_home{
+    .contactos_home {
         display: flex;
         flex-direction: column;
+    }
+
+    .contac_col {
+        padding: 5px;
+    }
+
+    .info_footer span {
+        margin-top: 20px;
     }
 }
