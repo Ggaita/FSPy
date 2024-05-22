@@ -1,10 +1,13 @@
 /* BODY-ROOT */ 
+
 body{
     overflow-x: hidden;
     background-color: #d8dce09f;
     background-image: url("../images/background-image.png");
     background-repeat: no-repeat;
     background-size: cover;
+    justify-content: center;
+    padding: 5px;
 }
 
 a:link {
@@ -86,13 +89,16 @@ nav {
     font-style:normal;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #2f3e46
+    color: #2f3e46;
 }
 
 a:link {
     text-decoration: none;
 }
 
+.nav_hotel_responsive{
+    display: none;
+}
 
 .nav_atajos {
     font-size: 1.1rem;
@@ -1032,3 +1038,176 @@ hr {
     border: 3px solid #e76f51;
 }
 
+
+
+@media screen and (max-width: 800px) {
+    .form_contacto{
+        grid-template-columns: 1fr;
+    }
+
+
+    .form_control_terminos,
+    .form_control_error,
+    .formulario_btn_enviar {
+        grid-column: 1;
+    }
+
+
+    .formulario_btn{
+        width: 100%;
+    }
+}
+
+
+/*Media query para celular*/
+
+@media screen and (max-width: 425px) {
+
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        border-bottom: none;
+        height: 100%;
+    }
+
+    header > div {
+        flex: 1; 
+    }
+
+    header .logo_hotel{
+        display: flex;
+        
+    }  
+     header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        border-bottom: none;
+        height: 100%;
+    }
+
+    header > div {
+        flex: 1; 
+    }
+
+    header .logo_hotel{
+        display: flex;
+        
+    }  
+    
+    nav {
+        display: flex;
+        width: 100%;
+    }
+
+    nav ul{
+        height: 25px;
+        border: none;
+        width: 100%;
+        display: flex;
+        justify-content:  space-between;
+    }
+
+    #naveHotel nav {
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+       
+    }
+
+
+    .nav_hotel{
+        display: none;
+    }
+
+    .nav_hotel_responsive{
+        display: flex;
+        font-size: 50px;
+        border-bottom: none;
+        width: 100%;
+        justify-content: space-between
+    }
+
+    nav {
+        display: flex;
+        width: 100%;
+    }
+
+    nav ul{
+        height: 25px;
+        border: none;
+        width: 100%;
+        display: flex;
+        justify-content:  space-around;
+    }
+
+
+    .nav_hotel{
+        display: none;
+    }
+
+    .nav_hotel_responsive{
+        display: flex;
+        font-size: 50px;
+        border-bottom: none;
+        width: 100%;
+        justify-content: space-around
+    }
+
+    .container{
+        margin: 0;
+        padding: 5px;
+    }
+
+    .info_adicional{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+
+    .hotel{
+        display: flex;
+        justify-content: center;
+    }
+
+    .clasif_span{
+        display: none;
+    }
+    .res_calif{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn_consultas{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .btn_consultas button{
+        font-size: 15px;
+    }
+
+    .titulo{
+        font-size: 15px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .titulo p{
+        font-size: 15px;
+    }
+    .cheecking_home{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactos_home{
+        display: flex;
+        flex-direction: column;
+    }
+}
