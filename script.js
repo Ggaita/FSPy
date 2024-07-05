@@ -130,3 +130,5 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("cir-3").addEventListener("click", Hab_3);
         document.getElementById("img_dobl").addEventListener("click", Hab_3);
 })
+
+
