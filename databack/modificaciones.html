@@ -63,17 +63,17 @@
     </div>
 
     <script>
-        const URL = "http://127.0.0.1:5000/"
+        const URL = "https://hotelpyfs.pythonanywhere.com/"
 
         // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
         //const URL = "https://USUARIO.pythonanywhere.com/"
 
         // Variables de estado para controlar la visibilidad y los datos del formulario
         let codigo = '';
-        let descripcion = '';
-        let cantidad = '';
+        let cliente = '';
+        let dias = '';
         let precio = '';
-        let proveedor = '';
+        let personas = '';
         let imagen_url = '';
         let imagenSeleccionada = null;
         let imagenUrlTemp = null;
@@ -96,11 +96,11 @@
                     }
                 })
                 .then(data => {
-                    descripcion = data.descripcion;
-                    cantidad = data.cantidad;
+                    cliente = data.cliente;
+                    dias = data.dias;
                     precio = data.precio;
-                    proveedor = data.proveedor;
-                    imagen_url = data.imagen_url;
+                    personas = data.personas;
+                    imagenQr = data.imagenQr;
                     mostrarDatosProducto = true; //Activa la vista del segundo formulario
                     mostrarFormulario();
                 })
@@ -112,15 +112,15 @@
         // Muestra el formulario con los datos del producto
         function mostrarFormulario() {
             if (mostrarDatosProducto) {
-                document.getElementById('descripcionModificar').value = descripcion;
-                document.getElementById('cantidadModificar').value = cantidad;
+                document.getElementById('descripcionModificar').value = cliente;
+                document.getElementById('cantidadModificar').value = dias;
                 document.getElementById('precioModificar').value = precio;
-                document.getElementById('proveModificar').value = proveedor;
+                document.getElementById('proveModificar').value = personas;
 
                 const imagenActual = document.getElementById('imagen-actual');
                 if (imagen_url && !imagenSeleccionada) { // Verifica si imagen_url no está vacía y no se ha seleccionado una imagen
 
-                    imagenActual.src = './static/imagenes/' + imagen_url;                    
+                    imagenActual.src = 'https://www.pythonanywhere.com/user/hotelpyfs/files/home/hotelpyfs/mysite/static/imagenes/' + imagen_url;                    
                     
                     //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
                     //imagenActual.src = 'https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + imagen_url;
