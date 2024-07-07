@@ -76,14 +76,14 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
-    color: #ffd200;
+    color: #0c6845;
 }
 
 form {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #390e8c;
+    padding: 50px;
+    background-color: #10421f;
     border: 1px solid lightslategray;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -92,11 +92,12 @@ form {
 table {
     max-width: 90%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #390e8c;
+    padding: 70px;
+    background-color: #10421f;
     border: 1px solid lightslategray;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
 }
 
 label {
@@ -130,7 +131,7 @@ input[type="submit"]:hover {
 button {
     padding: 8px;
     margin:4px;
-    background-color: #007bff;
+    background-color: #21d472;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -138,14 +139,15 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #010102;
+    color:#26e414
 }
 
 table a {
     padding: 8px;
     margin:4px;
-    background-color: #fdab13;
-    color: #1d1a39;
+    background-color: #21d472;
+    color: #1a4b14;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -155,6 +157,10 @@ table a {
 }
 
 table a:hover {
-    background-color: #1d1a39;
-    color:#fdab13
+    background-color: #010102;
+    color:#26e414
+}
+
+form a {
+    color: #cccccc;
 }
