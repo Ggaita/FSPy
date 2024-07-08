@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habitaciones</title>
     <link rel="stylesheet" href="../css/stylesback.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -17,25 +20,25 @@
     </header>
 
 <div class="tablero">
-    <h1>Agregar Habitaciones</h1><br>
+    <h1>AGREGAR HABITACIONES</h1><br>
 
     <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
     <form id="formulario" enctype="multipart/form-data">
         
         <label for="descripcion">Descripción:</label>
-        <input type="text" id="cliente" name="cliente" required><br>
+        <input type="text" id="descripcion" name="descripcion" required><br>
 
         <label for="cantidad">Cantidad:</label>
-        <input type="number" id="dias" name="dia" required><br>
+        <input type="number" id="cantidad" name="cantidad" required><br>
 
         <label for="precio">Precio:</label>
         <input type="number" step="0.01" id="precio" name="precio" required><br>
 
-        <label for="imagenProducto">Imagen del producto:</label>
-        <input type="file" id="imagenQr" name="imagen">
+        <label for="imagenQr">Imagen del producto:</label>
+        <input type="file" id="imagenQr" name="imagenQr">
 
         <br><br>
-        <label for="proveedorProducto">Proveedor:</label>
+        <label for="personas">Proveedor:</label>
         <input type="text" id="personas" name="personas">
         
         <button type="submit">Agregar Producto</button>
@@ -46,7 +49,7 @@
         const URL = "https://hotelpyfs.pythonanywhere.com/" 
 
         //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-        //const URL = "https://USUARIO.pythonanywhere.com/"
+        //const URL = "https://hotelpyfs.pythonanywhere.com/"
         
 
         // Capturamos el evento de envío del formulario
@@ -88,8 +91,8 @@
                     document.getElementById('descripcion').value = "";
                     document.getElementById('cantidad').value = "";
                     document.getElementById('precio').value = "";
-                    document.getElementById('imagenProducto').value = "";
-                    document.getElementById('proveedorProducto').value = "";
+                    document.getElementById('imagenQr').value = "";
+                    document.getElementById('personas').value = "";
                 });
         })
     </script>

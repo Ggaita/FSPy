@@ -56,7 +56,7 @@ header {
     max-width: 900px;
     width: 90%;
     
-    background-color: #7c837b;
+    background-color: #8ebd87;
     
     /*opacity: 0.50;
     filter: alpha(opacity=50);*/
@@ -80,7 +80,7 @@ header {
     max-width: 320px;
     min-width: 320px;
     padding: 30px 30px 50px 30px;
-    background-color: #719192;
+    background-color: #5fd69f;
     
     -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
@@ -100,7 +100,7 @@ header {
     display: block;
     font-family: 'Overpass', sans-serif;
     font-size: 120%;
-    color:#3c4541;
+    color:#222c28;
     
     margin-top: 15px;
 }
@@ -127,13 +127,13 @@ header {
 
 #login input::placeholder {
     font-family: 'Overpass', sans-serif;
-    color: #E4E4E4;
+    color: #978d8d;
 }
 
 #login button {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
-    color:#1b262c;
+    color:#c5d4db;
     width: 100%;
     height: 40px;
     border: none;
@@ -142,14 +142,14 @@ header {
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     
-    background-color: #dfcdc3;
+    background-color: #164420;
     
     margin-top: 10px;
 }
 
 #login button:hover {
-    background-color: #3c4245;
-    color:#dfcdc3;
+    background-color: #090c0e;
+    color:#1bd63a;
 }
 
 #derecho {
@@ -165,7 +165,7 @@ header {
 
 .titulo {
     font-size: 300%;
-    color:#dfcdc3;
+    color:#536944;
 }
 
 .logo-empresa img {
@@ -173,8 +173,8 @@ header {
 }
 
 hr {
-    border-top: 1px solid #8c8b8b;
-	border-bottom: 1px solid #dfcdc3;
+    border-top: 1px solid #15351d;
+	border-bottom: 1px solid #17411b;
     
 }
 .pie-form {
@@ -186,7 +186,7 @@ hr {
 .pie-form a {
     display: block;
     text-decoration: none;
-    color: #dfcdc3;
+    color: #382a22;
     margin-bottom: 3px;
 }
 

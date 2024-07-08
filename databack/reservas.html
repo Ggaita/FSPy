@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Productos 🚀</title>
+    <title>Reservas</title>
     <link rel="stylesheet" href="../css/stylesback.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -18,7 +21,7 @@
 
 
     <div class="tablero">
-    <h1>Listado de Productos del Inventario</h1><br>
+    <h1>RESERVAS</h1><br>
 
     <table> <!-- Se crea una tabla para mostrar los productos. -->
         <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
@@ -32,7 +35,7 @@
                 
             </tr>
         </thead>
-        <tbody id="tablaProductos"> </tbody>
+        <tbody id='tablaProductos'> </tbody>
     </table><br>
 
     <div class="contenedor-centrado">
@@ -40,7 +43,7 @@
     </div>
 </div>
     <script>
-        const URL = "https://hotelpyfs.pythonanywhsere.com/"
+        const URL = "https://hotelpyfs.pythonanywhere.com/"
 
         // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
         //const URL = "https://USUARIO.pythonanywhere.com/"
@@ -70,7 +73,7 @@
                         '<td align="right">' + producto.dias + '</td>' +
                         '<td align="right">' + producto.precio + '</td>' +
                         // Mostrar miniatura de la imagen
-                        '<td><img src=https://www.pythonanywhere.com/user/hotelpyfs/files/home/hotelpyfs/mysite/static/imagenes/' + producto.imagenQr +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.personas + '</td>';
+                        '<td><img src=https://www.pythonanywhere.com/user/hotelpyfs/files/home/hotelpyfs/mysite/static/imagenes/' + producto.imagenQr +'alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.personas + '</td>';
                         
                         //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
                         //'<td><img src=https://www.pythonanywhere.com/user/hotelpyfs/files/home/hotelpyfs/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
