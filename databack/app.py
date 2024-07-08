@@ -104,7 +104,7 @@ class Catalogo:
             print("-" * 40)
             print(f"Código.....: {producto['codigo']}")
             print(f"Descripción: {producto['cliente']}")
-            print(f"Cantidad...: {producto['cantidad']}")
+            print(f"Cantidad...: {producto['dias']}")
             print(f"Precio.....: {producto['precio']}")
             print(f"Imagen.....: {producto['imagenQr']}")
             print(f"Proveedor..: {producto['personas']}")
@@ -163,7 +163,7 @@ def mostrar_producto(codigo):
 def agregar_producto():
     #Recojo los datos del form
     cliente = request.form['cliente']
-    cantidad = request.form['cantidad']
+    dias = request.form['dias']
     precio = request.form['precio']
     imagenQr = request.files['imagenQr']
     personas = request.form['personas']  
@@ -175,7 +175,7 @@ def agregar_producto():
     nombre_base, extension = os.path.splitext(nombre_imagen) #Separa el nombre del archivo de su extensión.
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}" #Genera un nuevo nombre para la imagen usando un timestamp, para evitar sobreescrituras y conflictos de nombres.
 
-    nuevo_codigo = catalogo.agregar_producto(cliente, cantidad, precio, nombre_imagen, personas)
+    nuevo_codigo = catalogo.agregar_producto(cliente, dias, precio, nombre_imagen, personas)
     if nuevo_codigo:    
         imagenQr.save(os.path.join(RUTA_DESTINO, nombre_imagen))
 
@@ -195,7 +195,7 @@ def agregar_producto():
 def modificar_producto(codigo):
     #Se recuperan los nuevos datos del formulario
     nuevo_cliente = request.form.get("cliente")
-    nueva_cantidad = request.form.get("cantidad")
+    nuevos_dias = request.form.get("dias")
     nuevo_precio = request.form.get("precio")
     nueva_persona = request.form.get("personas")
     
@@ -230,7 +230,7 @@ def modificar_producto(codigo):
 
 
     # Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
-    if catalogo.modificar_producto(codigo, nuevo_cliente, nueva_cantidad, nuevo_precio, nombre_imagen, nueva_persona):
+    if catalogo.modificar_producto(codigo, nuevo_cliente, nuevos_dias, nuevo_precio, nombre_imagen, nueva_persona):
         
         #Si la actualización es exitosa, se devuelve una respuesta JSON con un mensaje de éxito y un código de estado HTTP 200 (OK).
         return jsonify({"mensaje": "Producto modificado"}), 200
