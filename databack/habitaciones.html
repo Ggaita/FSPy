@@ -26,7 +26,7 @@
     <form id="formulario" enctype="multipart/form-data">
         
         <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" required><br>
+        <input type="text" id="cliente" name="descripcion" required><br>
 
         <label for="cantidad">Cantidad:</label>
         <input type="number" id="cantidad" name="cantidad" required><br>
@@ -88,7 +88,7 @@
 
                 // Limpiar el formulario en ambos casos (éxito o error)
                 .finally(function () {
-                    document.getElementById('descripcion').value = "";
+                    document.getElementById('cliente').value = "";
                     document.getElementById('cantidad').value = "";
                     document.getElementById('precio').value = "";
                     document.getElementById('imagenQr').value = "";

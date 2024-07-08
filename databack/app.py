@@ -1,5 +1,5 @@
 # Instalar con pip install Flask
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 #from flask import request
 
 # Instalar con pip install flask-cors
@@ -103,11 +103,11 @@ class Catalogo:
         if producto:
             print("-" * 40)
             print(f"Código.....: {producto['codigo']}")
-            print(f"Descripción: {producto['descripcion']}")
+            print(f"Descripción: {producto['cliente']}")
             print(f"Cantidad...: {producto['cantidad']}")
             print(f"Precio.....: {producto['precio']}")
-            print(f"Imagen.....: {producto['imagen_url']}")
-            print(f"Proveedor..: {producto['proveedor']}")
+            print(f"Imagen.....: {producto['imagenQr']}")
+            print(f"Proveedor..: {producto['personas']}")
             print("-" * 40)
         else:
             print("Producto no encontrado.")
@@ -162,22 +162,22 @@ def mostrar_producto(codigo):
 #La función agregar_producto se asocia con esta URL y es llamada cuando se hace una solicitud POST a /productos.
 def agregar_producto():
     #Recojo los datos del form
-    descripcion = request.form['descripcion']
+    cliente = request.form['cliente']
     cantidad = request.form['cantidad']
     precio = request.form['precio']
-    imagen = request.files['imagen']
-    proveedor = request.form['proveedor']  
+    imagenQr = request.files['imagenQr']
+    personas = request.form['personas']  
     nombre_imagen=""
 
     
     # Genero el nombre de la imagen
-    nombre_imagen = secure_filename(imagen.filename) #Chequea el nombre del archivo de la imagen, asegurándose de que sea seguro para guardar en el sistema de archivos
+    nombre_imagen = secure_filename(imagenQr.filename) #Chequea el nombre del archivo de la imagen, asegurándose de que sea seguro para guardar en el sistema de archivos
     nombre_base, extension = os.path.splitext(nombre_imagen) #Separa el nombre del archivo de su extensión.
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}" #Genera un nuevo nombre para la imagen usando un timestamp, para evitar sobreescrituras y conflictos de nombres.
 
-    nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio, nombre_imagen, proveedor)
+    nuevo_codigo = catalogo.agregar_producto(cliente, cantidad, precio, nombre_imagen, personas)
     if nuevo_codigo:    
-        imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
+        imagenQr.save(os.path.join(RUTA_DESTINO, nombre_imagen))
 
         #Si el producto se agrega con éxito, se devuelve una respuesta JSON con un mensaje de éxito y un código de estado HTTP 201 (Creado).
         return jsonify({"mensaje": "Producto agregado correctamente.", "codigo": nuevo_codigo, "imagen": nombre_imagen}), 201
@@ -194,10 +194,10 @@ def agregar_producto():
 #La función modificar_producto se asocia con esta URL y es invocada cuando se realiza una solicitud PUT a /productos/ seguido de un número (el código del producto).
 def modificar_producto(codigo):
     #Se recuperan los nuevos datos del formulario
-    nueva_descripcion = request.form.get("descripcion")
+    nuevo_cliente = request.form.get("cliente")
     nueva_cantidad = request.form.get("cantidad")
     nuevo_precio = request.form.get("precio")
-    nuevo_proveedor = request.form.get("proveedor")
+    nueva_persona = request.form.get("personas")
     
     
     # Verifica si se proporcionó una nueva imagen
@@ -230,7 +230,7 @@ def modificar_producto(codigo):
 
 
     # Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
-    if catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nombre_imagen, nuevo_proveedor):
+    if catalogo.modificar_producto(codigo, nuevo_cliente, nueva_cantidad, nuevo_precio, nombre_imagen, nueva_persona):
         
         #Si la actualización es exitosa, se devuelve una respuesta JSON con un mensaje de éxito y un código de estado HTTP 200 (OK).
         return jsonify({"mensaje": "Producto modificado"}), 200
