@@ -46,7 +46,7 @@ class Catalogo:
                 raise err
 
         # Una vez que la base de datos está establecida, creamos la tabla si no existe
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS reserva (
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS Reserva (
             codigo INT AUTO_INCREMENT PRIMARY KEY,
             cliente VARCHAR(255) NOT NULL,
             dias INT NOT NULL,
@@ -61,8 +61,7 @@ class Catalogo:
         
     #----------------------------------------------------------------
     def agregar_producto(self, cliente, dias, precio, imagenQr, personas):
-               
-        sql = "INSERT INTO reserva   (cliente, dias, precio, imagenQr, personas) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO Reserva (cliente, dias, precio, imagenQr, personas) VALUES (%s, %s, %s, %s, %s)"
         valores = (cliente, dias, precio, imagenQr, personas)
 
         self.cursor.execute(sql, valores)        
@@ -72,12 +71,12 @@ class Catalogo:
     #----------------------------------------------------------------
     def consultar_producto(self, codigo):
         # Consultamos un producto a partir de su código
-        self.cursor.execute(f"SELECT * FROM reserva WHERE codigo = {codigo}")
+        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {codigo}")
         return self.cursor.fetchone()
 
     #----------------------------------------------------------------
     def modificar_producto(self, codigo, nuevo_cliente, nuevos_dias, nuevo_precio, nuevo_qr, nuevas_personas):
-        sql = "UPDATE reserva SET cliente = %s, dias = %s, precio = %s, imagenQr = %s, personas = %s WHERE codigo = %s"
+        sql = "UPDATE Reserva SET cliente = %s, dias = %s, precio = %s, imagenQr = %s, personas = %s WHERE codigo = %s"
         valores = (nuevo_cliente,nuevos_dias, nuevo_precio, nuevo_qr, nuevas_personas, codigo)
         self.cursor.execute(sql, valores)
         self.conn.commit()
@@ -85,14 +84,14 @@ class Catalogo:
 
     #----------------------------------------------------------------
     def listar_productos(self):
-        self.cursor.execute("SELECT * FROM reserva")
+        self.cursor.execute("SELECT * FROM Reserva")
         productos = self.cursor.fetchall()
         return productos
 
     #----------------------------------------------------------------
     def eliminar_producto(self, codigo):
         # Eliminamos un producto de la tabla a partir de su código
-        self.cursor.execute(f"DELETE FROM reserva WHERE codigo = {codigo}")
+        self.cursor.execute(f"DELETE FROM Reserva WHERE codigo = {codigo}")
         self.conn.commit()
         return self.cursor.rowcount > 0
 
@@ -119,11 +118,11 @@ class Catalogo:
 # Crear una instancia de la clase Catalogo
 #catalogo = Catalogo(host='localhost', port=3306,user='root', database='reserva')
 
-catalogo = Catalogo(host='hotelpyfs.mysql.pythonanywhere-services.com', user='hotelpyfs', password='host1234', database='hotelpyfs$reserva')
+catalogo = Catalogo(host='hotelpyfs.mysql.pythonanywhere-services.com', user='hotelpyfs', password='host1234', database='hotelpyfs$Reserva')
 
 
 # Carpeta para guardar las imagenes.
-RUTA_DESTINO = '/home/hotelpyfs/mysite/static/imagen'
+RUTA_DESTINO = '/home/hotelpyfs/mysite/static/imagenes'
 
 #Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
 #RUTA_DESTINO = '/home/USUARIO/mysite/static/imagenes'
@@ -134,7 +133,7 @@ RUTA_DESTINO = '/home/hotelpyfs/mysite/static/imagen'
 #--------------------------------------------------------------------
 #La ruta Flask /productos con el método HTTP GET está diseñada para proporcionar los detalles de todos los productos almacenados en la base de datos.
 #El método devuelve una lista con todos los productos en formato JSON.
-@app.route("/productos", methods=["GET"])
+@app.route("/reserva", methods=["GET"])
 def listar_productos():
     productos = catalogo.listar_productos()
     return jsonify(productos)
@@ -145,7 +144,7 @@ def listar_productos():
 #--------------------------------------------------------------------
 #La ruta Flask /productos/<int:codigo> con el método HTTP GET está diseñada para proporcionar los detalles de un producto específico basado en su código.
 #El método busca en la base de datos el producto con el código especificado y devuelve un JSON con los detalles del producto si lo encuentra, o None si no lo encuentra.
-@app.route("/productos/<int:codigo>", methods=["GET"])
+@app.route("/reserva/<int:codigo>", methods=["GET"])
 def mostrar_producto(codigo):
     producto = catalogo.consultar_producto(codigo)
     if producto:
@@ -157,7 +156,7 @@ def mostrar_producto(codigo):
 #--------------------------------------------------------------------
 # Agregar un producto
 #--------------------------------------------------------------------
-@app.route("/productos", methods=["POST"])
+@app.route("/reserva", methods=["POST"])
 #La ruta Flask `/productos` con el método HTTP POST está diseñada para permitir la adición de un nuevo producto a la base de datos.
 #La función agregar_producto se asocia con esta URL y es llamada cuando se hace una solicitud POST a /productos.
 def agregar_producto():
@@ -189,7 +188,7 @@ def agregar_producto():
 #--------------------------------------------------------------------
 # Modificar un producto según su código
 #--------------------------------------------------------------------
-@app.route("/productos/<int:codigo>", methods=["PUT"])
+@app.route("/reserva/<int:codigo>", methods=["PUT"])
 #La ruta Flask /productos/<int:codigo> con el método HTTP PUT está diseñada para actualizar la información de un producto existente en la base de datos, identificado por su código.
 #La función modificar_producto se asocia con esta URL y es invocada cuando se realiza una solicitud PUT a /productos/ seguido de un número (el código del producto).
 def modificar_producto(codigo):
@@ -243,7 +242,7 @@ def modificar_producto(codigo):
 #--------------------------------------------------------------------
 # Eliminar un producto según su código
 #--------------------------------------------------------------------
-@app.route("/productos/<int:codigo>", methods=["DELETE"])
+@app.route("/reserva/<int:codigo>", methods=["DELETE"])
 #La ruta Flask /productos/<int:codigo> con el método HTTP DELETE está diseñada para eliminar un producto específico de la base de datos, utilizando su código como identificador.
 #La función eliminar_producto se asocia con esta URL y es llamada cuando se realiza una solicitud DELETE a /productos/ seguido de un número (el código del producto).
 def eliminar_producto(codigo):
