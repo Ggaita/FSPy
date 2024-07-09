@@ -90,7 +90,7 @@
         function obtenerProducto(event) {
             event.preventDefault();
             codigo = document.getElementById('codigo').value;
-            fetch(URL + 'productos/' + codigo)
+            fetch(URL + 'reserva/' + codigo)
                 .then(response => {
                     if (response.ok) {
                         return response.json()
@@ -166,7 +166,7 @@
                 formData.append('imagen', imagenSeleccionada, imagenSeleccionada.name);
             }
 
-            fetch(URL + 'productos/' + codigo, {
+            fetch(URL + 'reserva/' + codigo, {
                 method: 'PUT',
                 body: formData,
             })
