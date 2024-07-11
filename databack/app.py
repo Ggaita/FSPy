@@ -8,7 +8,7 @@ from flask_cors import CORS
 # Instalar con pip install mysql-connector-python
 import mysql.connector
 
-# Si es necesario, pip install Werkzeug
+# Si es necesario,  
 from werkzeug.utils import secure_filename
 
 # No es necesario instalar, es parte del sistema standard de Python
@@ -46,7 +46,7 @@ class Catalogo:
                 raise err
 
         # Una vez que la base de datos está establecida, creamos la tabla si no existe
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS Reserva (
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS reserva (
             codigo INT AUTO_INCREMENT PRIMARY KEY,
             cliente VARCHAR(255) NOT NULL,
             dias INT NOT NULL,
@@ -61,7 +61,7 @@ class Catalogo:
         
     #----------------------------------------------------------------
     def agregar_producto(self, cliente, dias, precio, imagenQr, personas):
-        sql = "INSERT INTO Reserva (cliente, dias, precio, imagenQr, personas) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO reserva (cliente, dias, precio, imagenQr, personas) VALUES (%s, %s, %s, %s, %s)"
         valores = (cliente, dias, precio, imagenQr, personas)
 
         self.cursor.execute(sql, valores)        
@@ -71,12 +71,12 @@ class Catalogo:
     #----------------------------------------------------------------
     def consultar_producto(self, codigo):
         # Consultamos un producto a partir de su código
-        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {codigo}")
+        self.cursor.execute(f"SELECT * FROM reserva WHERE codigo = {codigo}")
         return self.cursor.fetchone()
 
     #----------------------------------------------------------------
     def modificar_producto(self, codigo, nuevo_cliente, nuevos_dias, nuevo_precio, nuevo_qr, nuevas_personas):
-        sql = "UPDATE Reserva SET cliente = %s, dias = %s, precio = %s, imagenQr = %s, personas = %s WHERE codigo = %s"
+        sql = "UPDATE reserva SET cliente = %s, dias = %s, precio = %s, imagenQr = %s, personas = %s WHERE codigo = %s"
         valores = (nuevo_cliente,nuevos_dias, nuevo_precio, nuevo_qr, nuevas_personas, codigo)
         self.cursor.execute(sql, valores)
         self.conn.commit()
@@ -84,14 +84,14 @@ class Catalogo:
 
     #----------------------------------------------------------------
     def listar_productos(self):
-        self.cursor.execute("SELECT * FROM Reserva")
+        self.cursor.execute("SELECT * FROM reserva")
         productos = self.cursor.fetchall()
         return productos
 
     #----------------------------------------------------------------
     def eliminar_producto(self, codigo):
         # Eliminamos un producto de la tabla a partir de su código
-        self.cursor.execute(f"DELETE FROM Reserva WHERE codigo = {codigo}")
+        self.cursor.execute(f"DELETE FROM reserva WHERE codigo = {codigo}")
         self.conn.commit()
         return self.cursor.rowcount > 0
 
@@ -118,11 +118,12 @@ class Catalogo:
 # Crear una instancia de la clase Catalogo
 #catalogo = Catalogo(host='localhost', port=3306,user='root', database='reserva')
 
-catalogo = Catalogo(host='hotelpyfs.mysql.pythonanywhere-services.com', user='hotelpyfs', password='host1234', database='hotelpyfs$Reserva')
+catalogo = Catalogo(host='adminhotel.mysql.pythonanywhere-services.com', user='adminhotel', password='hotel12345', database='adminhotel$miapp')
 
 
 # Carpeta para guardar las imagenes.
-RUTA_DESTINO = '/home/hotelpyfs/mysite/static/imagenes'
+RUTA_DESTINO = '/home/adminhotel/mysite/static/img/'
+
 
 #Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
 #RUTA_DESTINO = '/home/USUARIO/mysite/static/imagenes'
